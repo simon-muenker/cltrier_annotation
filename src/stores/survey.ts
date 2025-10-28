@@ -12,12 +12,17 @@ export type SurveyReplyItem = {
   response: string;
 };
 
+// Utility
+function formatSurvey(): SurveyReplyItem[] {
+  return surveyStore
+    .get()
+    .map((item: SurveyItem) => ({ id: item.id, response: item.options[0] }));
+}
+
 // Store Management
 export const surveyReplyStore = persistentAtom<Array<SurveyReplyItem>>(
   "surveyReply:",
-  surveyStore
-    .get()
-    .map((item: SurveyItem) => ({ id: item.id, response: item.options[0] })),
+  formatSurvey(),
   STORE_PARSER,
 );
 
@@ -37,4 +42,8 @@ export function setSurveyReply(id: SurveyItemID, response: string): void {
 
   surveyReplies[responseID].response = response;
   surveyReplyStore.set(surveyReplies);
+}
+
+export function resetSurveyReplyStore(): void {
+  surveyReplyStore.set(formatSurvey());
 }

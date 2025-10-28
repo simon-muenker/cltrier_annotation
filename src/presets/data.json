@@ -3,7 +3,6 @@
     "hero": {
       "title": "Open-Text-Annotation-Tool: Demo Survey and Annotation Data",
       "introduction": "Welcome to this configurable web interface designed for conducting text annotation studies with demographic surveys. This demonstration showcases the tool's capabilities using sample data that illustrates how researchers can collect insights through structured questionnaires and systematic text analysis. Start with our demo below, or visit '/setup' to upload your own custom datasets and create tailored annotation projects that meet your specific research needs."
-
     },
     "survey": {
       "headline": "Step 1: Fill in your socio-demographic details",

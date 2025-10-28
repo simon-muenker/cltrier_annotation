@@ -14,18 +14,21 @@ The Open Text-Annotation Tool is an educational and research platform that allow
 ## Features
 
 ### Configurable Survey System
+
 - Customizable demographic questionnaires
 - Multiple choice options with validation
 - Progress tracking and visual feedback
 - Default values and optional questions support
 
 ### Text Annotation Interface
+
 - Multi-dimensional annotation categories
 - Sample-by-sample annotation workflow
 - Navigation controls with progress indicators
 - Customizable annotation options and descriptions
 
 ### Data Management
+
 - JSON-based configuration system
 - Client-side data storage and processing
 - Export functionality for collected responses
@@ -35,17 +38,20 @@ The Open Text-Annotation Tool is an educational and research platform that allow
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/simon-muenker/Open-Text-Annotation-Tool.git
    cd Open-Text-Annotation-Tool
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start the development server:
+
    ```bash
    npm run dev
    ```
@@ -55,12 +61,14 @@ The Open Text-Annotation Tool is an educational and research platform that allow
 ## Usage
 
 ### Getting Started
+
 1. Visit the setup page at `/setup` to upload your custom configuration or explore with the demo
 2. Complete the demographic survey (Step 1)
 3. Annotate the provided text samples (Step 2)
 4. Download your results and submit to the specified upload location (Step 3)
 
 ### Configuration Format
+
 The tool uses JSON configuration files with the following structure:
 
 ```json
@@ -69,7 +77,11 @@ The tool uses JSON configuration files with the following structure:
     "hero": { "title": "...", "introduction": "..." },
     "survey": { "headline": "...", "description": "...", "contactMail": "..." },
     "annotation": { "headline": "...", "description": "..." },
-    "submission": { "headline": "...", "description": "...", "uploadUrl": "..." }
+    "submission": {
+      "headline": "...",
+      "description": "...",
+      "uploadUrl": "..."
+    }
   },
   "survey": [
     {
@@ -77,7 +89,7 @@ The tool uses JSON configuration files with the following structure:
       "label": "...",
       "options": ["None", "Option 1", "Option 2"],
       "description": "optional description"
-    },
+    }
   ],
   "annotation": [
     {
@@ -113,7 +125,6 @@ The tool uses JSON configuration files with the following structure:
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 | `npm run prettier`        | Format code with Prettier                        |
 | `npm run eslint`          | Lint code and fix issues                         |
-
 
 ## Privacy & Data Handling
 

@@ -4,6 +4,8 @@
 
   import { isDemoStore } from "@stores/setup";
   import { dataStore } from "@/stores/data";
+  import { resetSurveyReplyStore } from "@/stores/survey";
+  import { resetAnnotationReplyStore } from "@/stores/annotation";
 </script>
 
 <div class="flex items-center gap-8">
@@ -24,6 +26,8 @@
         onchange={async (event) => {
           dataStore.set((await uploadJSON(event)) as Data);
           isDemoStore.set(false);
+          resetSurveyReplyStore();
+          resetAnnotationReplyStore();
           window.location.href = window.location.href.replace("/setup", "");
         }}
       />

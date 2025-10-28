@@ -8,12 +8,24 @@ import SetupPartial from "@pages/partials/Setup.svelte";
 
 <BaseLayout title="Setup - Open Text-Annotation Tool">
   <div
-    class="mx-auto h-screen max-w-screen-xl overscroll-contain px-4 py-16 lg:py-32 flex flex-col items-center"
+    class="mx-auto flex h-screen max-w-screen-xl flex-col items-center overscroll-contain px-4 py-16 lg:py-32"
   >
     <h2 class="sectionheading">Welcome to the Open Text-Annotation Tool</h2>
 
     <p class="sectionparagraph">
-      Get started by uploading your custom annotation configuration file, or explore the platform's capabilities with our interactive demo. The tool supports JSON-formatted datasets containing survey questions, text samples for annotation, and configurable response options. Your uploaded configuration will define the survey demographics to collect, the annotation categories available, and the specific text samples participants will evaluate. All data remains secure and can be exported in standard formats for further analysis. If you want to generate your own survey, <a class="text-sky-700 underline underline-offset-2" href="/Open-Text-Annotation-Tool/example.json" target="_blank">download the example JSON.</a>
+      Get started by uploading your custom annotation configuration file, or
+      explore the platform's capabilities with our interactive demo. The tool
+      supports JSON-formatted datasets containing survey questions, text samples
+      for annotation, and configurable response options. Your uploaded
+      configuration will define the survey demographics to collect, the
+      annotation categories available, and the specific text samples
+      participants will evaluate. All data remains secure and can be exported in
+      standard formats for further analysis. If you want to generate your own
+      survey, <a
+        class="text-sky-700 underline underline-offset-2"
+        href="/Open-Text-Annotation-Tool/example.json"
+        target="_blank">download the example JSON.</a
+      >
     </p>
 
     <div class="h-8"></div>
@@ -23,7 +35,10 @@ import SetupPartial from "@pages/partials/Setup.svelte";
     <div class="h-12"></div>
 
     <footer class="text-sm leading-relaxed text-slate-500">
-      <a href="https://github.com/simon-muenker/Open-Text-Annotation-Tool" target="_blank">
+      <a
+        href="https://github.com/simon-muenker/Open-Text-Annotation-Tool"
+        target="_blank"
+      >
         <Icon name="mdi:github" class="-mt-0.5 inline text-base" />
         Github
       </a>

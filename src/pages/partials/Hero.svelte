@@ -29,7 +29,7 @@
 
       <div class="flex flex-wrap justify-center gap-4 py-8">
         <button
-          class="gradient cursor-pointer block w-auto rounded-full p-4 text-white hover:animate-pulse"
+          class="gradient block w-auto cursor-pointer rounded-full p-4 text-white hover:animate-pulse"
           onclick={() => scrollDown()}
         >
           <Icon

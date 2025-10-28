@@ -21,6 +21,17 @@ export type SampleAnnotationReplyItem = {
   annotations: Array<AnnotationReplyItem>;
 };
 
+// Utility
+function formatAnnotations(): SampleAnnotationReplyItem[] {
+  return samplesStore.get().map((sItem: SampleItem) => ({
+    id: sItem.id,
+    annotations: annotationStore.get().map((aItem: AnnotationItem) => ({
+      id: aItem.id,
+      response: aItem.options[0],
+    })),
+  }));
+}
+
 // Store Management
 export const activeAnnotationItemStore = persistentAtom<number>(
   "activeAnnotation:",
@@ -30,17 +41,7 @@ export const activeAnnotationItemStore = persistentAtom<number>(
 
 export const annotationReplyStore = persistentAtom<
   Array<SampleAnnotationReplyItem>
->(
-  "annotationReply:",
-  samplesStore.get().map((sItem: SampleItem) => ({
-    id: sItem.id,
-    annotations: annotationStore.get().map((aItem: AnnotationItem) => ({
-      id: aItem.id,
-      response: aItem.options[0],
-    })),
-  })),
-  STORE_PARSER,
-);
+>("annotationReply:", formatAnnotations(), STORE_PARSER);
 
 // Derived Stores
 export const annotationsStoreActiveItem = computed(
@@ -94,4 +95,9 @@ export function nextActiveAnnotationItem(): void {
 
   if (val < samplesStore.get().length - 1)
     activeAnnotationItemStore.set(val + 1);
+}
+
+export function resetAnnotationReplyStore(): void {
+  annotationReplyStore.set(formatAnnotations());
+  activeAnnotationItemStore.set(0);
 }
